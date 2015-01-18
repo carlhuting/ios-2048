@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59C7F5508F7EA966CC33E79C /* libPods-ios-2048.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */; };
+		C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */; };
 		C35AB7301A5FF21900118EC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB72F1A5FF21900118EC4 /* main.m */; };
 		C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7321A5FF21900118EC4 /* AppDelegate.m */; };
 		C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7351A5FF21900118EC4 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 		5BB45F5917FEAEC185FFCCDB /* Pods-ios-2048.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.release.xcconfig"; sourceTree = "<group>"; };
 		9783AA956967A67BC0D56A0E /* Pods-ios-2048.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.debug.xcconfig"; sourceTree = "<group>"; };
 		986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-2048.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTEmptyCellModel.h; sourceTree = "<group>"; };
+		C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTEmptyCellModel.m; sourceTree = "<group>"; };
 		C35AB72A1A5FF21900118EC4 /* ios-2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-2048.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35AB72E1A5FF21900118EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35AB72F1A5FF21900118EC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +102,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C328116D1A6BFE5B0089B302 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */,
+				C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C35AB7211A5FF21800118EC4 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +135,7 @@
 		C35AB72C1A5FF21900118EC4 /* ios-2048 */ = {
 			isa = PBXGroup;
 			children = (
+				C328116D1A6BFE5B0089B302 /* Models */,
 				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
 				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
 				C35AB7311A5FF21900118EC4 /* AppDelegate.h */,
@@ -313,6 +326,7 @@
 				C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */,
 				C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */,
 				C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */,
+				C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */,
 				C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */,
 				C35AB7301A5FF21900118EC4 /* main.m in Sources */,
 			);

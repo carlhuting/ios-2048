@@ -10,19 +10,20 @@
 #import "Masonry.h"
 #import "LTGamePanel.h"
 #import "LTCard.h"
+#import "LTEmptyCellModel.h"
 
 const NSInteger dimension=4;
 
 @interface ViewController ()
 {
     NSMutableArray *matrix;
-    NSMutableArray  *emptymatrix;
 }
 
 @property (weak, nonatomic) IBOutlet LTGamePanel *gamePanel;
 @property (nonatomic, strong) NSMutableArray *cells;
 @property (nonatomic, strong) NSMutableArray *scores;
 @property (nonatomic, strong) NSMutableArray *dataModel;
+@property (nonatomic, strong) LTEmptyCellModel *emptyModel;
 
 
 @end
@@ -47,23 +48,16 @@ const NSInteger dimension=4;
 
 - (void)initDataModel {
     
-    self.cells=[[NSMutableArray alloc] initWithCapacity:16];
+    self.cells=[[NSMutableArray alloc] initWithCapacity:dimension*dimension];
     matrix=[[NSMutableArray alloc] initWithCapacity:16];
-    emptymatrix=[[NSMutableArray alloc] initWithCapacity:16];
+    self.emptyModel=[[LTEmptyCellModel alloc]initWithDimension:dimension];
     
     for (NSUInteger i=0; i<16; i++) {
         [matrix addObject:[NSNull null]];
-        [emptymatrix addObject:@(i)];
+        
     }
 }
 
-- (NSInteger)emptyCell {
-    
-    NSUInteger index=(NSUInteger)arc4random_uniform((u_int32_t)[emptymatrix count]);
-    NSNumber *emptyNumber = [emptymatrix objectAtIndex:index];
-    [emptymatrix removeObjectAtIndex:index];
-    return emptyNumber.intValue;
-}
 
 - (NSUInteger)newscore {
      NSUInteger score=arc4random_uniform(10);
@@ -74,13 +68,9 @@ const NSInteger dimension=4;
 }
 
 - (void)newGame {
-    
-    //[self initDataModel];
-    NSInteger first=[self emptyCell];
 
+    NSInteger first=[self.emptyModel emptyCell];
     [self showScore:first score:[self newscore]];
-   
-    
 }
 
 - (void)showScore:(NSInteger) index score:(NSUInteger) score {
@@ -110,11 +100,8 @@ const NSInteger dimension=4;
     [self newGame];
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self buildBoard2];
     
     
@@ -140,31 +127,36 @@ const NSInteger dimension=4;
 
 }
 
+#pragma -mark swap
 - (void)upswip:(id) sender {
     
-    NSInteger lowerbound=0;
-    NSInteger upperbound=dimension*dimension;
+    NSInteger lowerbound;
+    NSInteger upperbound;
+    NSInteger from;
+    NSInteger to;
     
-    for (NSInteger column=lowerbound; column<lowerbound+dimension; column++) {
-        NSInteger from=column;
-        NSInteger to=from+dimension;
-        while (from<upperbound) {
+    for (NSInteger column=0; column<dimension; column++) {
+        lowerbound=column;
+        upperbound=column+dimension*(dimension-1);
+        from=column;
+        to=from+dimension;
+        while (from<=upperbound) {
             if (matrix[from]== [NSNull null]) {
                 to=from+dimension;
-                while (to<upperbound) {
+                while (to<=upperbound) {
                     if (matrix[to]!=[NSNull null]) {
                         [self movefrom:to to:from];
-                        from+=dimension;
+                        //from+=dimension;
                         break;
                     }
                     to+=dimension;
                 }
-                if (to>=upperbound) {
+                if (to>upperbound) {
                     break;
                 }
             } else {
                 to=from+dimension;
-                while (to<upperbound) {
+                while (to<=upperbound) {
                     if (matrix[to]!=[NSNull null]) {
                         if ([matrix[to] score]==[matrix[from] score]) {
                             [self mergefrom:to to:from];
@@ -177,7 +169,7 @@ const NSInteger dimension=4;
                     }
                     to+=dimension;
                 }
-                if (to>=upperbound) {
+                if (to>upperbound) {
                     break;
                 }
             }
@@ -187,14 +179,15 @@ const NSInteger dimension=4;
 }
 
 - (void)downswip:(id) sender {
-    
-    NSInteger upperbound=dimension*dimension;
-    NSInteger lowerbound=dimension-dimension;
+    NSInteger upperbound;
+    NSInteger lowerbound;
+    NSInteger from;
+    NSInteger to;
     
     for (NSInteger column=dimension*(dimension-1); column<dimension*dimension; column++) {
         
-        NSInteger from=column;
-        NSInteger to=from-dimension;
+        from=column;
+        to=from-dimension;
         upperbound=column;
         lowerbound=column-dimension*(dimension-1);
         
@@ -204,7 +197,7 @@ const NSInteger dimension=4;
                 while (to>=lowerbound) {
                     if (matrix[to]!=[NSNull null]) {
                         [self movefrom:to to:from];
-                        from-=dimension;
+                        //from-=dimension;
                         break;
                     }
                     to-=dimension;
@@ -237,31 +230,33 @@ const NSInteger dimension=4;
 }
 
 - (void)leftswip:(id) sender {
+    NSInteger lowerbound;
+    NSInteger upperbound;
+    NSInteger from;
+    NSInteger to;
     
-    NSInteger lowerbound=0;
-    NSInteger upperbound=dimension*dimension;
-    
-    for (NSInteger column=lowerbound; column<=lowerbound+dimension*(dimension-1); column+=dimension) {
-        upperbound=column+dimension;
-        NSInteger from=column;
-        NSInteger to=from+1;
-        while (from<upperbound) {
+    for (NSInteger column=0; column<=dimension*(dimension-1); column+=dimension) {
+        lowerbound=column;
+        upperbound=column+dimension-1;
+        from=column;
+        to=from+1;
+        while (from<=upperbound) {
             if (matrix[from]== [NSNull null]) {
                 to=from+1;
-                while (to<upperbound) {
+                while (to<=upperbound) {
                     if (matrix[to]!=[NSNull null]) {
                         [self movefrom:to to:from];
-                        from+=1;
+                        //from+=1;
                         break;
                     }
                     to+=1;
                 }
-                if (to>=upperbound) {
+                if (to>upperbound) {
                     break;
                 }
             } else {
                 to=from+1;
-                while (to<upperbound) {
+                while (to<=upperbound) {
                     if (matrix[to]!=[NSNull null]) {
                         if ([matrix[to] score]==[matrix[from] score]) {
                             [self mergefrom:to to:from];
@@ -274,41 +269,42 @@ const NSInteger dimension=4;
                     }
                     to+=1;
                 }
-                if (to>=upperbound) {
+                if (to>upperbound) {
                     break;
                 }
             }
         }
     }
-
 }
 
 - (void)rightswip:(id) sender {
-    
-    NSInteger lowerbound=0;
-    NSInteger upperbound=dimension*dimension;
+    NSInteger lowerbound;
+    NSInteger upperbound;
+    NSInteger from;
+    NSInteger to;
     
     for (NSInteger column=dimension-1; column<=dimension*dimension-1; column+=dimension) {
-        lowerbound=column-dimension;
-        NSInteger from=column;
-        NSInteger to=from-1;
-        while (from>lowerbound) {
+        upperbound=column;
+        lowerbound=column-dimension+1;
+        from=column;
+        to=from-1;
+        while (from>=lowerbound) {
             if (matrix[from]== [NSNull null]) {
                 to=from-1;
-                while (to>lowerbound) {
+                while (to>=lowerbound) {
                     if (matrix[to]!=[NSNull null]) {
                         [self movefrom:to to:from];
-                        from-=1;
+                        //from-=1;
                         break;
                     }
                     to-=1;
                 }
-                if (to<=lowerbound) {
+                if (to<lowerbound) {
                     break;
                 }
             } else {
                 to=from-1;
-                while (to>lowerbound) {
+                while (to>=lowerbound) {
                     if (matrix[to]!=[NSNull null]) {
                         if ([matrix[to] score]==[matrix[from] score]) {
                             [self mergefrom:to to:from];
@@ -321,7 +317,7 @@ const NSInteger dimension=4;
                     }
                     to-=1;
                 }
-                if (to<=lowerbound) {
+                if (to<lowerbound) {
                     break;
                 }
             }
@@ -334,18 +330,13 @@ const NSInteger dimension=4;
     if (from==to) {
         return ;
     }
-    
-    [self removeempty:to];
-    [emptymatrix addObject:@(from)];
-    
+    [self.emptyModel removeEmptyCell:to];
+    [self.emptyModel addEmptyCell:from ];
     LTCard *card=matrix[from];
-    
     matrix[from]=[NSNull null];
     matrix[to]=card;
-
     [UIView animateWithDuration:0.5 animations:^{
         card.view.frame=[self.cells[to] frame];
-    
     } completion:^(BOOL finished) {
         
     }];
@@ -357,30 +348,22 @@ const NSInteger dimension=4;
         return ;
     }
     
-    [emptymatrix addObject:@(from)];
+    [self.emptyModel addEmptyCell:from];
     LTCard *dismisscard=matrix[from];
-    [dismisscard.view removeFromSuperview];
     LTCard *card=matrix[to];
-    [card twotimes];
     [UIView animateWithDuration:0.5 animations:^{
-       
+        dismisscard.view.frame=card.view.frame;
         
     } completion:^(BOOL finished) {
-        matrix[from]=[NSNull null];
+        
     }];
+     matrix[from]=[NSNull null];
+    [dismisscard.view removeFromSuperview];
+    [card twotimes];
+
     
 }
 
-- (void)removeempty:(NSInteger) position {
-    
-    for (NSInteger i=0; i<[emptymatrix count]; i++) {
-        if (position==[emptymatrix[i] intValue]) {
-            [emptymatrix removeObjectAtIndex:i];
-            NSLog(@"remove emptycell at %ld",position);
-            return;
-        }
-    }
-}
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
