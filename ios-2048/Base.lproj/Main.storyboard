@@ -48,6 +48,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="newgame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qd4-TT-Ghp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -78,6 +81,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-Qo-ENB" userLabel="boder" customClass="LTGamePanel">
                                 <rect key="frame" x="16" y="115" width="568" height="568"/>
                                 <color key="backgroundColor" red="0.6705882352941176" green="0.61568627450980395" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Q0s-Qo-ENB" secondAttribute="height" multiplier="1:1" id="iU5-kd-a5y"/>
                                 </constraints>

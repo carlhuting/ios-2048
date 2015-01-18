@@ -18,6 +18,7 @@
 		C35AB7551A5FFD2C00118EC4 /* LTScorePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7541A5FFD2C00118EC4 /* LTScorePanel.m */; };
 		C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */; };
 		C35AB75A1A5FFF3D00118EC4 /* default.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35AB7591A5FFF3D00118EC4 /* default.xcassets */; };
+		C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1A9BB1A6B83DD00323140 /* LTCard.m */; };
 		C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */; };
 		C3E5D51A1A63C86C0065AD25 /* LTGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,9 @@
 		C35AB7561A5FFD5B00118EC4 /* LTGamePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGamePanel.h; sourceTree = "<group>"; };
 		C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGamePanel.m; sourceTree = "<group>"; };
 		C35AB7591A5FFF3D00118EC4 /* default.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = default.xcassets; sourceTree = "<group>"; };
+		C3E1A9B71A6B83A900323140 /* ios-2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-2048-Bridging-Header.h"; sourceTree = "<group>"; };
+		C3E1A9BA1A6B83DD00323140 /* LTCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCard.h; path = ../LTCard.h; sourceTree = "<group>"; };
+		C3E1A9BB1A6B83DD00323140 /* LTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCard.m; path = ../LTCard.m; sourceTree = "<group>"; };
 		C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameViewController.h; sourceTree = "<group>"; };
 		C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameViewController.m; sourceTree = "<group>"; };
 		C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTGameViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				C35AB72B1A5FF21900118EC4 /* Products */,
 				436C7D11B7BE3AA3D2D62153 /* Pods */,
 				BBE6C0454C888DF002FFB4B4 /* Frameworks */,
+				C3E1A9B71A6B83A900323140 /* ios-2048-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +123,8 @@
 		C35AB72C1A5FF21900118EC4 /* ios-2048 */ = {
 			isa = PBXGroup;
 			children = (
-				C3E5D5151A63C82C0065AD25 /* New Group */,
+				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
+				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
 				C35AB7311A5FF21900118EC4 /* AppDelegate.h */,
 				C35AB7321A5FF21900118EC4 /* AppDelegate.m */,
 				C35AB7341A5FF21900118EC4 /* ViewController.h */,
@@ -163,13 +169,6 @@
 				C35AB7481A5FF21900118EC4 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C3E5D5151A63C82C0065AD25 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +311,7 @@
 				C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */,
 				C35AB7551A5FFD2C00118EC4 /* LTScorePanel.m in Sources */,
 				C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */,
+				C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */,
 				C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */,
 				C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */,
 				C35AB7301A5FF21900118EC4 /* main.m in Sources */,
@@ -437,10 +437,13 @@
 			baseConfigurationReference = 9783AA956967A67BC0D56A0E /* Pods-ios-2048.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "ios-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-2048-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -449,10 +452,12 @@
 			baseConfigurationReference = 5BB45F5917FEAEC185FFCCDB /* Pods-ios-2048.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "ios-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-2048-Bridging-Header.h";
 			};
 			name = Release;
 		};
