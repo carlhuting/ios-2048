@@ -54,10 +54,8 @@ const NSInteger dimension=4;
     
     for (NSUInteger i=0; i<16; i++) {
         [matrix addObject:[NSNull null]];
-        
     }
 }
-
 
 - (NSUInteger)newscore {
      NSUInteger score=arc4random_uniform(10);
@@ -68,13 +66,11 @@ const NSInteger dimension=4;
 }
 
 - (void)newGame {
-
     NSInteger first=[self.emptyModel emptyCell];
     [self showScore:first score:[self newscore]];
 }
 
-- (void)showScore:(NSInteger) index score:(NSUInteger) score {
-    
+- (void)showScore:(NSInteger)index score:(NSUInteger)score {
     LTCard *card=[LTCard new];
     UIView *bgView=self.cells[index];
     
@@ -86,7 +82,6 @@ const NSInteger dimension=4;
     matrix[index]=card;
     card.view.frame=bgView.frame;
     [self.gamePanel addSubview:card.view];
-    
 }
 
 - (UIButton *)cardwithscore:(NSUInteger) score {
@@ -102,7 +97,7 @@ const NSInteger dimension=4;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self buildBoard2];
+    [self buildBoard];
     
     
     UISwipeGestureRecognizer * uswip=[[UISwipeGestureRecognizer alloc] init];
@@ -175,7 +170,6 @@ const NSInteger dimension=4;
             }
         }
     }
-
 }
 
 - (void)downswip:(id) sender {
@@ -355,22 +349,14 @@ const NSInteger dimension=4;
         dismisscard.view.frame=card.view.frame;
         
     } completion:^(BOOL finished) {
-        
     }];
      matrix[from]=[NSNull null];
     [dismisscard.view removeFromSuperview];
     [card twotimes];
-
-    
 }
 
-
-- (void)updateViewConstraints {
-    [super updateViewConstraints];
-}
-
-- (void)buildBoard2{
-    NSUInteger rows=4;
+- (void)buildBoard{
+    NSUInteger rows=dimension;
     CGFloat span=5.0;
     
     [self.view layoutIfNeeded];
@@ -391,100 +377,11 @@ const NSInteger dimension=4;
             }];
         }
     }
-    
 }
-
-- (void)buildBoard {
-   
-    NSUInteger rows=4;
-    
-    NSMutableArray *colarry=[[NSMutableArray alloc] initWithCapacity:rows];
-    for (NSInteger row=0; row<rows; row++) {
-        NSMutableArray *rowary=[[NSMutableArray alloc] initWithCapacity:rows];
-        for (NSInteger column=0; column<rows; column++) {
-            UIView *view=[UIView new];
-            view.backgroundColor=[UIColor purpleColor];
-            [self.cells addObject:view];
-            [rowary addObject:view];
-        }
-        [colarry addObject:[self viewRow:rowary]];
-    }
-    [self viewColumn:colarry];
-    
-}
-
-- (UIView *)viewRow:(NSArray *)cells  {
-    
-    UIView * rowView=[UIView new];
-    UIView *leftview=rowView;
-    
-    for (UIView *view in cells) {
-        [rowView addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@0);
-            if (leftview==rowView) {
-                make.leading.equalTo(leftview.mas_leading);
-                
-            }
-            else
-            {
-                make.leading.equalTo(leftview.mas_trailing);
-            }
-            make.bottom.equalTo(@0);
-             // make.width.equalTo(rowView).dividedBy([cells count]);
-            if (leftview!=rowView) {
-                make.width.equalTo(leftview.mas_width);
-            }
-        }];
-        leftview=view;
-    }
-    
-    UIView *rightest=[cells lastObject];
-    [rightest mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(@0);
-    }];
-    return rowView;
-}
-
-- (UIView *)viewColumn:(NSArray *)cells  {
-    
-    UIView * rowView=self.gamePanel;
-    UIView *leftview=rowView;
-    
-    for (UIView *view in cells) {
-        [rowView addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.equalTo(@0);
-            if (leftview==rowView) {
-                make.top.equalTo(leftview.mas_top);
-
-            }
-            else
-            {
-                make.top.equalTo(leftview.mas_bottom);
-            }
-            make.leading.equalTo(@0);
-           // make.height.equalTo(rowView).dividedBy([cells count]);
-            if (leftview!=rowView) {
-                make.height.equalTo(leftview.mas_height);
-                
-            }
-        }];
-        leftview=view;
-    }
-   
-    UIView *rightest=[cells lastObject];
-    [rightest mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(@0);
-    }];
-    return rowView;
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59C7F5508F7EA966CC33E79C /* libPods-ios-2048.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */; };
 		C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */; };
+		C32811711A6CA5C90089B302 /* LTTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C32811701A6CA5C90089B302 /* LTTableLayout.m */; };
 		C35AB7301A5FF21900118EC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB72F1A5FF21900118EC4 /* main.m */; };
 		C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7321A5FF21900118EC4 /* AppDelegate.m */; };
 		C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7351A5FF21900118EC4 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 		986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-2048.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTEmptyCellModel.h; sourceTree = "<group>"; };
 		C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTEmptyCellModel.m; sourceTree = "<group>"; };
+		C328116F1A6CA5C90089B302 /* LTTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTableLayout.h; sourceTree = "<group>"; };
+		C32811701A6CA5C90089B302 /* LTTableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTableLayout.m; sourceTree = "<group>"; };
 		C35AB72A1A5FF21900118EC4 /* ios-2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-2048.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35AB72E1A5FF21900118EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35AB72F1A5FF21900118EC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		C35AB7561A5FFD5B00118EC4 /* LTGamePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGamePanel.h; sourceTree = "<group>"; };
 		C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGamePanel.m; sourceTree = "<group>"; };
 		C35AB7591A5FFF3D00118EC4 /* default.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = default.xcassets; sourceTree = "<group>"; };
-		C3E1A9B71A6B83A900323140 /* ios-2048-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-2048-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3E1A9BA1A6B83DD00323140 /* LTCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCard.h; path = ../LTCard.h; sourceTree = "<group>"; };
 		C3E1A9BB1A6B83DD00323140 /* LTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCard.m; path = ../LTCard.m; sourceTree = "<group>"; };
 		C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameViewController.h; sourceTree = "<group>"; };
@@ -111,6 +113,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		C328116E1A6CA5950089B302 /* Legency */ = {
+			isa = PBXGroup;
+			children = (
+				C328116F1A6CA5C90089B302 /* LTTableLayout.h */,
+				C32811701A6CA5C90089B302 /* LTTableLayout.m */,
+			);
+			name = Legency;
+			sourceTree = "<group>";
+		};
 		C35AB7211A5FF21800118EC4 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +130,6 @@
 				C35AB72B1A5FF21900118EC4 /* Products */,
 				436C7D11B7BE3AA3D2D62153 /* Pods */,
 				BBE6C0454C888DF002FFB4B4 /* Frameworks */,
-				C3E1A9B71A6B83A900323140 /* ios-2048-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +145,7 @@
 		C35AB72C1A5FF21900118EC4 /* ios-2048 */ = {
 			isa = PBXGroup;
 			children = (
+				C328116E1A6CA5950089B302 /* Legency */,
 				C328116D1A6BFE5B0089B302 /* Models */,
 				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
 				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
@@ -327,6 +338,7 @@
 				C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */,
 				C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */,
 				C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */,
+				C32811711A6CA5C90089B302 /* LTTableLayout.m in Sources */,
 				C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */,
 				C35AB7301A5FF21900118EC4 /* main.m in Sources */,
 			);
