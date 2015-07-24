@@ -12,7 +12,7 @@
 
 - (void)twotimes {
     self.score=self.score*2;
-    UIButton *buton=self.view;
+    UIButton *buton = self.view;
     [buton setTitle:@(self.score).stringValue forState:UIControlStateNormal];
 }
 @end
