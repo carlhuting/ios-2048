@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5908732C1B638DCB0082337F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5908732B1B638DCB0082337F /* README.md */; };
 		59C7F5508F7EA966CC33E79C /* libPods-ios-2048.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */; };
 		C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */; };
 		C32811711A6CA5C90089B302 /* LTTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C32811701A6CA5C90089B302 /* LTTableLayout.m */; };
 		C35AB7301A5FF21900118EC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB72F1A5FF21900118EC4 /* main.m */; };
-		C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7321A5FF21900118EC4 /* AppDelegate.m */; };
+		C35AB7331A5FF21900118EC4 /* LTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7321A5FF21900118EC4 /* LTAppDelegate.m */; };
 		C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7351A5FF21900118EC4 /* ViewController.m */; };
 		C35AB7391A5FF21900118EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35AB7371A5FF21900118EC4 /* Main.storyboard */; };
 		C35AB73B1A5FF21900118EC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35AB73A1A5FF21900118EC4 /* Images.xcassets */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590873271B638A510082337F /* LTPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTPrefixHeader.pch; sourceTree = "<group>"; };
+		5908732B1B638DCB0082337F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BB45F5917FEAEC185FFCCDB /* Pods-ios-2048.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.release.xcconfig"; sourceTree = "<group>"; };
 		9783AA956967A67BC0D56A0E /* Pods-ios-2048.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.debug.xcconfig"; sourceTree = "<group>"; };
 		986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-2048.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,8 +49,8 @@
 		C35AB72A1A5FF21900118EC4 /* ios-2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-2048.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35AB72E1A5FF21900118EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35AB72F1A5FF21900118EC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C35AB7311A5FF21900118EC4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C35AB7321A5FF21900118EC4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C35AB7311A5FF21900118EC4 /* LTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTAppDelegate.h; sourceTree = "<group>"; };
+		C35AB7321A5FF21900118EC4 /* LTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTAppDelegate.m; sourceTree = "<group>"; };
 		C35AB7341A5FF21900118EC4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C35AB7351A5FF21900118EC4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C35AB7381A5FF21900118EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +99,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		590873281B638CE70082337F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C35AB7531A5FFD2C00118EC4 /* LTScorePanel.h */,
+				C35AB7541A5FFD2C00118EC4 /* LTScorePanel.m */,
+				C35AB7561A5FFD5B00118EC4 /* LTGamePanel.h */,
+				C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */,
+				C35AB73C1A5FF21900118EC4 /* LaunchScreen.xib */,
+				C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */,
+				C35AB7371A5FF21900118EC4 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		590873291B638CF80082337F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C35AB7341A5FF21900118EC4 /* ViewController.h */,
+				C35AB7351A5FF21900118EC4 /* ViewController.m */,
+				C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */,
+				C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5908732A1B638D020082337F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C35AB7591A5FFF3D00118EC4 /* default.xcassets */,
+				C35AB73A1A5FF21900118EC4 /* Images.xcassets */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		5908732D1B638DEF0082337F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		5908732E1B638F500082337F /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Catalog;
+			sourceTree = "<group>";
+		};
 		BBE6C0454C888DF002FFB4B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,28 +155,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C328116D1A6BFE5B0089B302 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */,
-				C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		C328116E1A6CA5950089B302 /* Legency */ = {
+		C328116D1A6BFE5B0089B302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				C328116F1A6CA5C90089B302 /* LTTableLayout.h */,
 				C32811701A6CA5C90089B302 /* LTTableLayout.m */,
+				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
+				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
+				C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */,
+				C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */,
 			);
-			name = Legency;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C35AB7211A5FF21800118EC4 = {
 			isa = PBXGroup;
 			children = (
-				C35AB72C1A5FF21900118EC4 /* ios-2048 */,
+				5908732B1B638DCB0082337F /* README.md */,
+				C35AB72C1A5FF21900118EC4 /* iOS-2048 */,
 				C35AB7461A5FF21900118EC4 /* ios-2048Tests */,
 				C35AB72B1A5FF21900118EC4 /* Products */,
 				436C7D11B7BE3AA3D2D62153 /* Pods */,
@@ -142,36 +189,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C35AB72C1A5FF21900118EC4 /* ios-2048 */ = {
+		C35AB72C1A5FF21900118EC4 /* iOS-2048 */ = {
 			isa = PBXGroup;
 			children = (
-				C328116E1A6CA5950089B302 /* Legency */,
-				C328116D1A6BFE5B0089B302 /* Models */,
-				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
-				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
-				C35AB7311A5FF21900118EC4 /* AppDelegate.h */,
-				C35AB7321A5FF21900118EC4 /* AppDelegate.m */,
-				C35AB7341A5FF21900118EC4 /* ViewController.h */,
-				C35AB7351A5FF21900118EC4 /* ViewController.m */,
-				C35AB7371A5FF21900118EC4 /* Main.storyboard */,
-				C35AB73A1A5FF21900118EC4 /* Images.xcassets */,
-				C35AB73C1A5FF21900118EC4 /* LaunchScreen.xib */,
+				5908732E1B638F500082337F /* Catalog */,
+				5908732D1B638DEF0082337F /* Config */,
+				5908732A1B638D020082337F /* Resource */,
+				590873291B638CF80082337F /* Controller */,
+				590873281B638CE70082337F /* View */,
+				C328116D1A6BFE5B0089B302 /* Model */,
 				C35AB72D1A5FF21900118EC4 /* Supporting Files */,
-				C35AB7531A5FFD2C00118EC4 /* LTScorePanel.h */,
-				C35AB7541A5FFD2C00118EC4 /* LTScorePanel.m */,
-				C35AB7561A5FFD5B00118EC4 /* LTGamePanel.h */,
-				C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */,
-				C35AB7591A5FFF3D00118EC4 /* default.xcassets */,
-				C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */,
-				C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */,
-				C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */,
 			);
+			name = "iOS-2048";
 			path = "ios-2048";
 			sourceTree = "<group>";
 		};
 		C35AB72D1A5FF21900118EC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C35AB7321A5FF21900118EC4 /* LTAppDelegate.m */,
+				C35AB7311A5FF21900118EC4 /* LTAppDelegate.h */,
+				590873271B638A510082337F /* LTPrefixHeader.pch */,
 				C35AB72E1A5FF21900118EC4 /* Info.plist */,
 				C35AB72F1A5FF21900118EC4 /* main.m */,
 			);
@@ -334,7 +372,8 @@
 			files = (
 				C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */,
 				C35AB7551A5FFD2C00118EC4 /* LTScorePanel.m in Sources */,
-				C35AB7331A5FF21900118EC4 /* AppDelegate.m in Sources */,
+				5908732C1B638DCB0082337F /* README.md in Sources */,
+				C35AB7331A5FF21900118EC4 /* LTAppDelegate.m in Sources */,
 				C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */,
 				C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */,
 				C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */,
@@ -416,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -463,7 +502,10 @@
 			baseConfigurationReference = 9783AA956967A67BC0D56A0E /* Pods-ios-2048.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ios-2048/LTPrefixHeader.pch";
 				INFOPLIST_FILE = "ios-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -478,7 +520,10 @@
 			baseConfigurationReference = 5BB45F5917FEAEC185FFCCDB /* Pods-ios-2048.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ios-2048/LTPrefixHeader.pch";
 				INFOPLIST_FILE = "ios-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

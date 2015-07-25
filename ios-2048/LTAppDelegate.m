@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 lemontree. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "LTAppDelegate.h"
 
-@interface AppDelegate ()
+@interface LTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation LTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

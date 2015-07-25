@@ -13,7 +13,7 @@
 - (instancetype)initWithDimension:(NSInteger)dimension {
     self = [super init];
     if (self) {
-        emptyMatrix=[[NSMutableArray alloc] initWithCapacity:dimension*dimension];
+        emptyMatrix = [[NSMutableArray alloc] initWithCapacity:dimension*dimension];
         for (NSUInteger i=0; i<16; i++) {
             [emptyMatrix addObject:@(i)];
         }
@@ -21,30 +21,28 @@
     return self;
 }
 - (NSInteger)emptyCell {
-    NSUInteger index=(NSUInteger)arc4random_uniform((u_int32_t)[emptyMatrix count]);
+    NSUInteger index = (NSUInteger)arc4random_uniform((u_int32_t)[emptyMatrix count]);
     NSNumber *emptyNumber = [emptyMatrix objectAtIndex:index];
     [emptyMatrix removeObjectAtIndex:index];
     return emptyNumber.intValue;
 }
 
 - (void)removeEmptyCell:(NSInteger)cell {
-    
     for (NSInteger i=0; i<[emptyMatrix count]; i++) {
-        if (cell==[emptyMatrix[i] intValue]) {
+        if (cell == [emptyMatrix[i] intValue]) {
             [emptyMatrix removeObjectAtIndex:i];
-            NSLog(@"remove emptycell at %ld",cell);
+            NSLog(@"remove emptycell at %d",cell);
             return;
         }
     }
 }
 
 - (void)addEmptyCell:(NSInteger)cell {
-    
     [emptyMatrix addObject:@(cell)];
 }
 
 - (BOOL)isEmpty {
-    return [emptyMatrix count]==0;
+    return [emptyMatrix count] == 0;
 }
 
 @end
