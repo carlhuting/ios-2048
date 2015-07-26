@@ -8,6 +8,10 @@
 
 #import "LTGamePanel.h"
 
+@interface LTGamePanel ()
+
+@end
+
 @implementation LTGamePanel
 
 

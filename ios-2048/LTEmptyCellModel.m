@@ -9,40 +9,51 @@
 #import "LTEmptyCellModel.h"
 
 @implementation LTEmptyCellModel
+{
+    NSInteger capacity;
+}
 
 - (instancetype)initWithDimension:(NSInteger)dimension {
     self = [super init];
     if (self) {
-        emptyMatrix = [[NSMutableArray alloc] initWithCapacity:dimension*dimension];
-        for (NSUInteger i=0; i<16; i++) {
-            [emptyMatrix addObject:@(i)];
-        }
+        capacity = dimension * dimension;
+        [self reset];
     }
     return self;
 }
 - (NSInteger)emptyCell {
-    NSUInteger index = (NSUInteger)arc4random_uniform((u_int32_t)[emptyMatrix count]);
+    NSInteger index = (NSInteger)arc4random_uniform((u_int32_t)[emptyMatrix count]);
     NSNumber *emptyNumber = [emptyMatrix objectAtIndex:index];
-    [emptyMatrix removeObjectAtIndex:index];
-    return emptyNumber.intValue;
+    [self removeEmptyCell:emptyNumber.integerValue];
+    return emptyNumber.integerValue;
 }
 
 - (void)removeEmptyCell:(NSInteger)cell {
-    for (NSInteger i=0; i<[emptyMatrix count]; i++) {
-        if (cell == [emptyMatrix[i] intValue]) {
-            [emptyMatrix removeObjectAtIndex:i];
-            NSLog(@"remove emptycell at %d",cell);
-            return;
-        }
-    }
+    [emptyMatrix removeObject:@(cell)];
+//    for (NSInteger i=0; i<[emptyMatrix count]; i++) {
+//        if (cell == [emptyMatrix[i] intValue]) {
+//            [emptyMatrix removeObjectAtIndex:i];
+//           
+//            return;
+//        }
+//    }
+    LTLog(@"remove emptycell at %ld",(long)cell);
 }
 
 - (void)addEmptyCell:(NSInteger)cell {
     [emptyMatrix addObject:@(cell)];
+     LTLog(@"add emptycell at %ld",(long)cell);
 }
 
 - (BOOL)isEmpty {
     return [emptyMatrix count] == 0;
+}
+
+- (void)reset {
+    emptyMatrix = [[NSMutableArray alloc] initWithCapacity:capacity];
+    for (NSInteger i = 0; i<capacity; i++) {
+        [emptyMatrix addObject:@(i)];
+    }
 }
 
 @end

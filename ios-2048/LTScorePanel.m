@@ -8,6 +8,10 @@
 
 #import "LTScorePanel.h"
 
+@interface LTScorePanel ()
+
+@end
+
 @implementation LTScorePanel
 
 @end

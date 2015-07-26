@@ -1,6 +1,6 @@
 //
-//  ios_2048Tests.m
-//  ios-2048Tests
+//  iOS_2048Tests.m
+//  iOS-2048Tests
 //
 //  Created by carl on 15/1/9.
 //  Copyright (c) 2015年 lemontree. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface ios_2048Tests : XCTestCase
+@interface iOS_2048Tests : XCTestCase
 
 @end
 
-@implementation ios_2048Tests
+@implementation iOS_2048Tests
 
 - (void)setUp {
     [super setUp];

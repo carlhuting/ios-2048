@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LTScorePanel : UIView
-
+@property (nonatomic, assign) NSInteger currentScore;
+@property (nonatomic, assign) NSInteger historyScore;
 @end

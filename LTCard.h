@@ -1,6 +1,6 @@
 //
 //  LTCard.h
-//  ios-2048
+//  iOS-2048
 //
 //  Created by carl on 15/1/18.
 //  Copyright (c) 2015年 lemontree. All rights reserved.
@@ -14,6 +14,6 @@
 @property (nonatomic) NSInteger score;
 @property (nonatomic, strong) UIView* view;
 
-- (void)twotimes;
+- (NSInteger)twice;
 
 @end

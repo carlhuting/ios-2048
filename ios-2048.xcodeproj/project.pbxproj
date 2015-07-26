@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5908732C1B638DCB0082337F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5908732B1B638DCB0082337F /* README.md */; };
+		591CD17C1B64E34D00B0AE57 /* LTGameOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591CD17B1B64E34D00B0AE57 /* LTGameOverView.m */; };
+		591CD17F1B650B0400B0AE57 /* UIColor+LTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 591CD17E1B650B0400B0AE57 /* UIColor+LTColor.m */; };
+		597337FC1B6485940050E44C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597337FB1B6485940050E44C /* CoreGraphics.framework */; };
 		59C7F5508F7EA966CC33E79C /* libPods-ios-2048.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */; };
 		C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */; };
-		C32811711A6CA5C90089B302 /* LTTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C32811701A6CA5C90089B302 /* LTTableLayout.m */; };
 		C35AB7301A5FF21900118EC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB72F1A5FF21900118EC4 /* main.m */; };
 		C35AB7331A5FF21900118EC4 /* LTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7321A5FF21900118EC4 /* LTAppDelegate.m */; };
 		C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7351A5FF21900118EC4 /* ViewController.m */; };
@@ -22,8 +24,6 @@
 		C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */; };
 		C35AB75A1A5FFF3D00118EC4 /* default.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35AB7591A5FFF3D00118EC4 /* default.xcassets */; };
 		C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1A9BB1A6B83DD00323140 /* LTCard.m */; };
-		C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */; };
-		C3E5D51A1A63C86C0065AD25 /* LTGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +39,17 @@
 /* Begin PBXFileReference section */
 		590873271B638A510082337F /* LTPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTPrefixHeader.pch; sourceTree = "<group>"; };
 		5908732B1B638DCB0082337F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		591CD17A1B64E34D00B0AE57 /* LTGameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameOverView.h; sourceTree = "<group>"; };
+		591CD17B1B64E34D00B0AE57 /* LTGameOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameOverView.m; sourceTree = "<group>"; };
+		591CD17D1B650B0400B0AE57 /* UIColor+LTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LTColor.h"; sourceTree = "<group>"; };
+		591CD17E1B650B0400B0AE57 /* UIColor+LTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LTColor.m"; sourceTree = "<group>"; };
+		591CD1801B652FAB00B0AE57 /* LTBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBaseDefine.h; sourceTree = "<group>"; };
+		597337FB1B6485940050E44C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5BB45F5917FEAEC185FFCCDB /* Pods-ios-2048.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.release.xcconfig"; sourceTree = "<group>"; };
 		9783AA956967A67BC0D56A0E /* Pods-ios-2048.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-2048.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-2048/Pods-ios-2048.debug.xcconfig"; sourceTree = "<group>"; };
 		986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-2048.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTEmptyCellModel.h; sourceTree = "<group>"; };
 		C328116B1A6BFE490089B302 /* LTEmptyCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTEmptyCellModel.m; sourceTree = "<group>"; };
-		C328116F1A6CA5C90089B302 /* LTTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTableLayout.h; sourceTree = "<group>"; };
-		C32811701A6CA5C90089B302 /* LTTableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTableLayout.m; sourceTree = "<group>"; };
 		C35AB72A1A5FF21900118EC4 /* ios-2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-2048.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35AB72E1A5FF21900118EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35AB72F1A5FF21900118EC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,9 +70,6 @@
 		C35AB7591A5FFF3D00118EC4 /* default.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = default.xcassets; sourceTree = "<group>"; };
 		C3E1A9BA1A6B83DD00323140 /* LTCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCard.h; path = ../LTCard.h; sourceTree = "<group>"; };
 		C3E1A9BB1A6B83DD00323140 /* LTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCard.m; path = ../LTCard.m; sourceTree = "<group>"; };
-		C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameViewController.h; sourceTree = "<group>"; };
-		C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameViewController.m; sourceTree = "<group>"; };
-		C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTGameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597337FC1B6485940050E44C /* CoreGraphics.framework in Frameworks */,
 				59C7F5508F7EA966CC33E79C /* libPods-ios-2048.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,8 +109,9 @@
 				C35AB7561A5FFD5B00118EC4 /* LTGamePanel.h */,
 				C35AB7571A5FFD5B00118EC4 /* LTGamePanel.m */,
 				C35AB73C1A5FF21900118EC4 /* LaunchScreen.xib */,
-				C3E5D5181A63C86C0065AD25 /* LTGameViewController.xib */,
 				C35AB7371A5FF21900118EC4 /* Main.storyboard */,
+				591CD17A1B64E34D00B0AE57 /* LTGameOverView.h */,
+				591CD17B1B64E34D00B0AE57 /* LTGameOverView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -118,8 +121,6 @@
 			children = (
 				C35AB7341A5FF21900118EC4 /* ViewController.h */,
 				C35AB7351A5FF21900118EC4 /* ViewController.m */,
-				C3E5D5161A63C86C0065AD25 /* LTGameViewController.h */,
-				C3E5D5171A63C86C0065AD25 /* LTGameViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -140,16 +141,20 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
-		5908732E1B638F500082337F /* Catalog */ = {
+		5908732E1B638F500082337F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				591CD17D1B650B0400B0AE57 /* UIColor+LTColor.h */,
+				591CD17E1B650B0400B0AE57 /* UIColor+LTColor.m */,
+				591CD1801B652FAB00B0AE57 /* LTBaseDefine.h */,
 			);
-			name = Catalog;
+			name = Category;
 			sourceTree = "<group>";
 		};
 		BBE6C0454C888DF002FFB4B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				597337FB1B6485940050E44C /* CoreGraphics.framework */,
 				986CF3E64C0F834EBE42ADF6 /* libPods-ios-2048.a */,
 			);
 			name = Frameworks;
@@ -158,8 +163,6 @@
 		C328116D1A6BFE5B0089B302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C328116F1A6CA5C90089B302 /* LTTableLayout.h */,
-				C32811701A6CA5C90089B302 /* LTTableLayout.m */,
 				C3E1A9BA1A6B83DD00323140 /* LTCard.h */,
 				C3E1A9BB1A6B83DD00323140 /* LTCard.m */,
 				C328116A1A6BFE490089B302 /* LTEmptyCellModel.h */,
@@ -192,7 +195,7 @@
 		C35AB72C1A5FF21900118EC4 /* iOS-2048 */ = {
 			isa = PBXGroup;
 			children = (
-				5908732E1B638F500082337F /* Catalog */,
+				5908732E1B638F500082337F /* Category */,
 				5908732D1B638DEF0082337F /* Config */,
 				5908732A1B638D020082337F /* Resource */,
 				590873291B638CF80082337F /* Controller */,
@@ -319,7 +322,6 @@
 				C35AB75A1A5FFF3D00118EC4 /* default.xcassets in Resources */,
 				C35AB73E1A5FF21900118EC4 /* LaunchScreen.xib in Resources */,
 				C35AB73B1A5FF21900118EC4 /* Images.xcassets in Resources */,
-				C3E5D51A1A63C86C0065AD25 /* LTGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,12 +375,12 @@
 				C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */,
 				C35AB7551A5FFD2C00118EC4 /* LTScorePanel.m in Sources */,
 				5908732C1B638DCB0082337F /* README.md in Sources */,
+				591CD17F1B650B0400B0AE57 /* UIColor+LTColor.m in Sources */,
 				C35AB7331A5FF21900118EC4 /* LTAppDelegate.m in Sources */,
+				591CD17C1B64E34D00B0AE57 /* LTGameOverView.m in Sources */,
 				C3E1A9BC1A6B83DD00323140 /* LTCard.m in Sources */,
 				C35AB7581A5FFD5B00118EC4 /* LTGamePanel.m in Sources */,
 				C328116C1A6BFE490089B302 /* LTEmptyCellModel.m in Sources */,
-				C32811711A6CA5C90089B302 /* LTTableLayout.m in Sources */,
-				C3E5D5191A63C86C0065AD25 /* LTGameViewController.m in Sources */,
 				C35AB7301A5FF21900118EC4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
