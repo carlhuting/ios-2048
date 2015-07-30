@@ -30,13 +30,6 @@
 
 - (void)removeEmptyCell:(NSInteger)cell {
     [emptyMatrix removeObject:@(cell)];
-//    for (NSInteger i=0; i<[emptyMatrix count]; i++) {
-//        if (cell == [emptyMatrix[i] intValue]) {
-//            [emptyMatrix removeObjectAtIndex:i];
-//           
-//            return;
-//        }
-//    }
     LTLog(@"remove emptycell at %ld",(long)cell);
 }
 

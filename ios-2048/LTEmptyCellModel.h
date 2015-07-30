@@ -12,10 +12,12 @@
     @private
     NSMutableArray *emptyMatrix;
 }
+
 - (instancetype)initWithDimension:(NSInteger)dimension;
 - (NSInteger)emptyCell;
 - (void)addEmptyCell:(NSInteger)cell;
 - (void)removeEmptyCell:(NSInteger)cell;
 - (BOOL)isEmpty;
 - (void)reset;
+
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5908732C1B638DCB0082337F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5908732B1B638DCB0082337F /* README.md */; };
 		591CD17C1B64E34D00B0AE57 /* LTGameOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 591CD17B1B64E34D00B0AE57 /* LTGameOverView.m */; };
 		591CD17F1B650B0400B0AE57 /* UIColor+LTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 591CD17E1B650B0400B0AE57 /* UIColor+LTColor.m */; };
 		597337FC1B6485940050E44C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597337FB1B6485940050E44C /* CoreGraphics.framework */; };
@@ -38,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		590873271B638A510082337F /* LTPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTPrefixHeader.pch; sourceTree = "<group>"; };
-		5908732B1B638DCB0082337F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		591C6E0C1B661F4F00E41951 /* en */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = en; path = en.lproj/README.md; sourceTree = "<group>"; };
 		591CD17A1B64E34D00B0AE57 /* LTGameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameOverView.h; sourceTree = "<group>"; };
 		591CD17B1B64E34D00B0AE57 /* LTGameOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameOverView.m; sourceTree = "<group>"; };
 		591CD17D1B650B0400B0AE57 /* UIColor+LTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LTColor.h"; sourceTree = "<group>"; };
@@ -174,7 +173,7 @@
 		C35AB7211A5FF21800118EC4 = {
 			isa = PBXGroup;
 			children = (
-				5908732B1B638DCB0082337F /* README.md */,
+				591C6E0D1B661F4F00E41951 /* README.md */,
 				C35AB72C1A5FF21900118EC4 /* iOS-2048 */,
 				C35AB7461A5FF21900118EC4 /* ios-2048Tests */,
 				C35AB72B1A5FF21900118EC4 /* Products */,
@@ -374,7 +373,6 @@
 			files = (
 				C35AB7361A5FF21900118EC4 /* ViewController.m in Sources */,
 				C35AB7551A5FFD2C00118EC4 /* LTScorePanel.m in Sources */,
-				5908732C1B638DCB0082337F /* README.md in Sources */,
 				591CD17F1B650B0400B0AE57 /* UIColor+LTColor.m in Sources */,
 				C35AB7331A5FF21900118EC4 /* LTAppDelegate.m in Sources */,
 				591CD17C1B64E34D00B0AE57 /* LTGameOverView.m in Sources */,
@@ -404,6 +402,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		591C6E0D1B661F4F00E41951 /* README.md */ = {
+			isa = PBXVariantGroup;
+			children = (
+				591C6E0C1B661F4F00E41951 /* en */,
+			);
+			name = README.md;
+			sourceTree = "<group>";
+		};
 		C35AB7371A5FF21900118EC4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -578,7 +584,7 @@
 				C35AB74C1A5FF21900118EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C35AB74D1A5FF21900118EC4 /* Build configuration list for PBXNativeTarget "ios-2048" */ = {
 			isa = XCConfigurationList;
@@ -587,7 +593,7 @@
 				C35AB74F1A5FF21900118EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C35AB7501A5FF21900118EC4 /* Build configuration list for PBXNativeTarget "ios-2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -596,7 +602,7 @@
 				C35AB7521A5FF21900118EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

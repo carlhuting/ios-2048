@@ -97,10 +97,11 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     _matrix[index] = card;
     card.view.frame = [self getFrame:index];
     card.view.alpha = 0.4;
+    card.view.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [self.gamePanel addSubview:card.view];
     [UIView animateWithDuration:0.23 animations:^{
         card.view.alpha = 1.0;
-        card.view.frame = [self getFrame:index];
+        card.view.transform = CGAffineTransformMakeScale(1.0, 1.0);
     }];
 }
 
@@ -147,22 +148,22 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     
     [self buildBoard];
     
-    UISwipeGestureRecognizer * uswip = [[UISwipeGestureRecognizer alloc] init];
+    UISwipeGestureRecognizer *uswip = [[UISwipeGestureRecognizer alloc] init];
     [uswip setDirection:UISwipeGestureRecognizerDirectionUp];
     [uswip addTarget:self action:@selector(upswip:)];
     [self.gamePanel addGestureRecognizer:uswip];
     
-    UISwipeGestureRecognizer * dswip = [[UISwipeGestureRecognizer alloc] init];
+    UISwipeGestureRecognizer *dswip = [[UISwipeGestureRecognizer alloc] init];
     [dswip setDirection:UISwipeGestureRecognizerDirectionDown];
     [dswip addTarget:self action:@selector(downswip:)];
     [self.gamePanel addGestureRecognizer:dswip];
     
-    UISwipeGestureRecognizer * lswip = [[UISwipeGestureRecognizer alloc] init];
+    UISwipeGestureRecognizer *lswip = [[UISwipeGestureRecognizer alloc] init];
     [lswip setDirection:UISwipeGestureRecognizerDirectionLeft];
     [lswip addTarget:self action:@selector(leftswip:)];
     [self.gamePanel addGestureRecognizer:lswip];
     
-    UISwipeGestureRecognizer * rswip = [[UISwipeGestureRecognizer alloc] init];
+    UISwipeGestureRecognizer *rswip = [[UISwipeGestureRecognizer alloc] init];
     [rswip setDirection:UISwipeGestureRecognizerDirectionRight];
     [rswip addTarget:self action:@selector(rightswip:)];
     [self.gamePanel addGestureRecognizer:rswip];
@@ -380,7 +381,7 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     NSInteger score = 0;
     BOOL flag = NO;
     
-    for (NSInteger column = dimension-1; column<=dimension*dimension-1; column+=dimension) {
+    for (NSInteger column = dimension-1; column <= dimension * dimension - 1; column += dimension) {
         upperbound = column;
         lowerbound = column - dimension + 1;
         from = column;
@@ -388,20 +389,20 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
         while (from >= lowerbound) {
             if (_matrix[from] == [NSNull null]) {
                 to = from-1;
-                while (to>=lowerbound) {
-                    if (_matrix[to]!= [NSNull null]) {
+                while (to >= lowerbound) {
+                    if (_matrix[to] != [NSNull null]) {
                         [self movefrom:to to:from];
                         flag = flag || YES;
                         break;
                     }
-                    to-=1;
+                    to -= 1;
                 }
                 if (to<lowerbound) {
                     break;
                 }
             } else {
-                to=from-1;
-                while (to>=lowerbound) {
+                to = from-1;
+                while (to >= lowerbound) {
                     if (_matrix[to] != [NSNull null]) {
                         if ([_matrix[to] score] == [_matrix[from] score]) {
                            score += [self mergefrom:to to:from];
@@ -415,7 +416,7 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
                     }
                     to -= 1;
                 }
-                if (to<lowerbound) {
+                if (to < lowerbound) {
                     break;
                 }
             }
@@ -434,7 +435,7 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     NSInteger row, column;
     for (row = 0 ;row < dimension; row ++) {
         for (column = 0; column < dimension; column ++) {
-            if ((row+column)%2 !=0) {
+            if ((row+column) % 2 != 0) {
                 continue;
             }
             NSInteger index = row * dimension + column;
@@ -482,7 +483,6 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     CGFloat height = CGRectGetHeight(cell.frame)-4;
     CGRect rect = CGRectMake(x, y, width, height);
     return rect;
-    return cell.frame;
 }
 
 - (void)movefrom:(NSInteger)from to:(NSInteger) to {
@@ -495,7 +495,7 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     _matrix[from] = [NSNull null];
     NSAssert(_matrix[to] == [NSNull null], @"there is error about move");
     _matrix[to] = card;
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         card.view.frame = [self getFrame:to];
     } completion:^(BOOL finished) {
         
@@ -509,8 +509,9 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
     [self.emptyModel addEmptyCell:from];
     LTCard *dismisscard = _matrix[from];
     LTCard *card = _matrix[to];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         dismisscard.view.frame = card.view.frame;
+        dismisscard.view.alpha = 0.0;
         
     } completion:^(BOOL finished) {
     }];
