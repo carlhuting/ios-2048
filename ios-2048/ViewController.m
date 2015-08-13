@@ -254,15 +254,12 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
             }
         }
     }
-    if (flag) {
-        [self performSelector:@selector(addNewOne) withObject:nil afterDelay:0.4];
-         self.currentScore += score;
-    }
+    !flag?:[self valueDidChange:score];
 }
 
 - (void)downswip:(id) sender {
-    NSInteger upperbound;
     NSInteger lowerbound;
+    NSInteger upperbound;
     NSInteger from;
     NSInteger to;
     NSInteger score = 0;
@@ -311,14 +308,10 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
             }
         }
     }
-    if (flag) {
-        [self performSelector:@selector(addNewOne) withObject:nil afterDelay:0.4];
-        self.currentScore += score;
-    }
+    !flag?:[self valueDidChange:score];
 }
 
 - (void)leftswip:(id) sender {
-    
     NSInteger lowerbound;
     NSInteger upperbound;
     NSInteger from;
@@ -367,10 +360,7 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
             }
         }
     }
-    if (flag) {
-        [self performSelector:@selector(addNewOne) withObject:nil afterDelay:0.4];
-        self.currentScore += score;
-    }
+    !flag?:[self valueDidChange:score];
 }
 
 - (void)rightswip:(id) sender {
@@ -422,10 +412,12 @@ static NSString *const kMaxHistoryKey = @"kMaxHistoryScore";
             }
         }
     }
-    if (flag) {
-        [self performSelector:@selector(addNewOne) withObject:nil afterDelay:0.4];
-        self.currentScore += score;
-    }
+    !flag?:[self valueDidChange:score];
+}
+
+- (void)valueDidChange:(NSInteger) score {
+    [self performSelector:@selector(addNewOne) withObject:nil afterDelay:0.4];
+    self.currentScore += score;
 }
 
 - (BOOL)gameOver {
